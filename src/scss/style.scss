@@ -1,0 +1,195 @@
+//МИКСИНЫ
+@mixin for-phone {
+    @media (max-width: 479.98px) { @content; }
+  }
+  @mixin for-tablet {
+    @media (max-width: 767.98px) { @content; }
+  }
+  @mixin for-laptop {
+    @media (max-width: 991.98px) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (max-width: 1920px) { @content; }
+  }
+//МИКСИНЫ
+
+
+//ШРИФТЫ
+
+//ПОДКЛЮЧАЕМ ШРИФТЫ
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:regular);
+//ПОДКЛЮЧАЕМ ШРИФТЫ
+
+//ШРИФТ ПО УМОЛЧАНИЮ
+$fontfamily: "Open Sans";
+//ШРИФТ ПО УМОЛЧАНИЮ
+
+//ШРИФТЫ
+
+
+//ПЕРЕМЕННЫЕ
+$primaryColor: #fff;
+$bgdarkColor: #373A3C;
+$greenColor: #8DD83D;
+$textDarkColor: #435766;
+//ПЕРЕМЕННЫЕ
+
+//ОБНУЛЕНИЕ
+@import 'reset';
+//ОБНУЛЕНИЕ
+
+//ПОДКЛЮЧЕНИЕ СТРАНИЦ
+@import 'header';
+//ПОДКЛЮЧЕНИЕ СТРАНИЦ
+
+//ОБЩИЕ СТИЛИ
+body {
+  color: $primaryColor;
+  font-family: $fontfamily;
+
+  &.lock {
+    overflow: hidden;
+  }
+}
+
+
+//ОБЩИЕ СТИЛИ
+
+//ОБОЛОЧКА
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+//ОБОЛОЧКА
+
+
+//ОСНОВНАЯ СЕТКА
+.container {
+    max-width: 1430px;
+
+    margin: 0 auto;
+    padding: 0 15px;
+
+    //@include for-desktop-up {
+    //  max-width: 970px;
+    //}
+//
+    //@include for-laptop {
+    //  max-width: 760px
+    //}
+//
+    //@include for-tablet {
+    //  max-width: none;
+    //}
+//
+    //@include for-phone {
+//
+    //}
+}
+
+.container-2 {
+  max-width: 1230px;
+
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-3 {
+  max-width: 1230px;
+
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-4 {
+  max-width: 1430px;
+
+  margin: 0 auto;
+  
+}
+
+//ОСНОВНАЯ СЕТКА
+
+//ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ 
+
+//ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ 
+
+
+//ОСНОВНОЙ БЛОК
+.main {
+
+}
+
+.mainblock {
+  height: calc(100vh - 60px);
+  position: relative;
+
+  padding: 70px 0 0 0;
+
+  &::after {
+      content: '';
+      display: block;
+
+      width: 100%;
+      height: calc(100% + 350px);
+
+      position: absolute;
+      top: -85vh;
+      left: 0;
+      z-index: 1;
+
+      transform: skew(0, -8deg);
+
+      background-color: rgb(69, 69, 69);
+  }
+
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      z-index: 1;
+
+      width: 100%;
+      height: 100%
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+		&__content {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+		}
+
+		&__title {
+      font-size: 52px;
+      line-height: 60px;
+      width: 200px;
+		}
+
+		&__btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 305px;
+      height: 50px;
+
+      border-radius: 10px;
+
+      font-size: 24px;
+      letter-spacing: 1.5px;
+      background-color: rgb(192, 44, 93);
+		}
+}
+
+//ОСНОВНОЙ БЛОК
